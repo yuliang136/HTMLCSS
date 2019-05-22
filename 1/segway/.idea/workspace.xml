@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0ebaa6f9-de0e-4642-89c7-bc2a088e4d16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quote.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quote.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/segway.html" beforeDir="false" afterPath="$PROJECT_DIR$/segway.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,8 +20,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/segway.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+            <state relative-caret-position="1341">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
+              <folding>
+                <element signature="e#1121#1125#0" expanded="true" />
+                <element signature="e#1129#1133#0" expanded="true" />
+                <element signature="e#1249#1258#0" expanded="true" />
+                <element signature="e#1258#1263#0" expanded="true" />
+                <element signature="e#1269#1275#0" expanded="true" />
+                <element signature="e#1275#1283#0" expanded="true" />
+                <element signature="e#1283#1288#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Quote.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -40,6 +59,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Quote.html" />
         <option value="$PROJECT_DIR$/segway.html" />
       </list>
     </option>
@@ -56,6 +76,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -67,7 +88,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -75,6 +95,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -95,6 +121,16 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Quote.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/segway/Quote.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.Quote.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -106,16 +142,17 @@
       <option name="presentableId" value="Default" />
       <updated>1558357009364</updated>
       <workItem from="1558357010509" duration="926000" />
-      <workItem from="1558402971423" duration="13000" />
+      <workItem from="1558402971423" duration="7000000" />
+      <workItem from="1558489640801" duration="613000" />
+      <workItem from="1558493840026" duration="1809000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="939000" />
+    <option name="totallyTimeSpent" value="10348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986821" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -142,8 +179,24 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/segway.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="1341">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#1121#1125#0" expanded="true" />
+            <element signature="e#1129#1133#0" expanded="true" />
+            <element signature="e#1249#1258#0" expanded="true" />
+            <element signature="e#1258#1263#0" expanded="true" />
+            <element signature="e#1269#1275#0" expanded="true" />
+            <element signature="e#1275#1283#0" expanded="true" />
+            <element signature="e#1283#1288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quote.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>
