@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Emblema One";
+    src: url("fonts/EmblemaOne-Regular.woff"),url("fonts/EmblemaOne-Regular.ttf");
+}
+
+body{
+    font-family: verdana, Geneva, Arial, sans-serif;
+    font-size: small;
+
+    /*background-color: silver;*/
+    /*background-color: rgb(80%, 40%, 0%);*/
+    /*background-color: rgb(204, 102, 0);*/
+}
+
+h1, h2{
+    color: #cc6600;
+    /*text-decoration: underline;*/
+    border-bottom: thin dotted #888888;
+}
+
+h1{
+    font-family: "Emblema One", sans-serif;
+    font-size: 220%;
+}
+
+h2{
+    font-size: 130%;
+    font-weight: normal;
+}
+
+blockquote{
+    font-style: italic;
+}
+/*body{*/
+/*    fonts-family: "Courier New", Courier;*/
+/*}*/
