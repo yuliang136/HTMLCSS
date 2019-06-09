@@ -9,7 +9,7 @@
 <?php
 //    echo "Test";
 
-$dbc = mysqli_connect('192.168.0.111', 'root', '123456', 'elvis_store') or die('Error connecting to MySQL server.');
+$dbc = mysqli_connect('192.168.1.207', 'root', '123456', 'elvis_store') or die('Error connecting to MySQL server.');
 
 $first_name = $_POST['firstname'];
 $last_name = $_POST['lastname'];
