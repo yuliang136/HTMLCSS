@@ -18,7 +18,7 @@ require_once('appvars.php');
 require_once('connectvars.php');
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-$query = "SELECT * FROM guitarwars";
+$query = "SELECT * FROM guitarwars ORDER BY score DESC, date ASC";
 $data = mysqli_query($dbc, $query);
 
 echo '<table>';
