@@ -16,14 +16,14 @@ require_once('connectvars.php');
 
 // 判断是否是submit提交 还是第一次登入.
 if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $score = $_POST['score'];
-    $screenshot = $_FILES['screenshot']['name'];
+    $name = mysqli_real_escape_string($dbc, trim($_POST['name']));
+    $score = mysqli_real_escape_string($dbc, trim($_POST['score']));
+    $screenshot = mysqli_real_escape_string($dbc, trim($_FILES['screenshot']['name']));
     $screenshot_type = $_FILES['screenshot']['type'];
     $screenshot_size = $_FILES['screenshot']['size'];
 
     // 判断提交的内容不为空. 都不为空时 进行插入操作
-    if (!empty($name) && !empty($score) && !empty($screenshot)) {
+    if (!empty($name) && is_numeric($score) && !empty($screenshot)) {
         if ((($screenshot_type == 'image/gif') || ($screenshot_type == 'image/jpeg') || ($screenshot_type == 'image/pjpeg') || ($screenshot_type == 'image/png'))
             && ($screenshot_size > 0)
             && ($screenshot_size <= GW_MAXFILESIZE)
@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 //        echo $_FILES['screenshot']['tmp_name'] . '<br />';
                 if (move_uploaded_file($_FILES['screenshot']['tmp_name'], $target)) {
                     $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-                    $query = "INSERT INTO guitarwars VALUES (0, NOW(), '$name', '$score', '$screenshot')";
+                    $query = "INSERT INTO guitarwars (date, name, score, screenshot) VALUES (NOW(), '$name', '$score', '$screenshot')";
                     mysqli_query($dbc, $query) or die('Something wrong!');
 
                     // Confirm success with the user.
