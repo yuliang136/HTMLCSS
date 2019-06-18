@@ -25,16 +25,23 @@ if (!isset($_SESSION['user_id'])) {
 //                setcookie('user_id', $row['user_id']);
 //                setcookie('username', $row['username']);
 
+
+
                 $_SESSION['user_id'] = $row['user_id'];
                 $_SESSION['username'] = $row['username'];
-                setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30));
-                setcookie('username', $row['username'], time() + (60 * 60 * 24 * 30));
+
+                echo '$_SESSION[\'user_id\'] = ' . $_SESSION['user_id'] . '<br />';
+                echo '$_SESSION[\'username\'] = ' . $_SESSION['username'] . '<br />';
+
+
+//                setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30));
+//                setcookie('username', $row['username'], time() + (60 * 60 * 24 * 30));
 
                 $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/index.php';
                 echo '$home_url = ' . $home_url . '<br />';
 
-                echo '$_SERVER[\'HTTP_HOST\'] = ' . $_SERVER['HTTP_HOST'] . '<br />';
-                echo 'dirname($_SERVER[\'PHP_SELF\']) = ' . dirname($_SERVER['PHP_SELF']) . '<br />';
+//                echo '$_SERVER[\'HTTP_HOST\'] = ' . $_SERVER['HTTP_HOST'] . '<br />';
+//                echo 'dirname($_SERVER[\'PHP_SELF\']) = ' . dirname($_SERVER['PHP_SELF']) . '<br />';
 
                 header('Location: ' . $home_url);
             } else {
