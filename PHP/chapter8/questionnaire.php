@@ -57,23 +57,43 @@ if (isset($_POST['submit'])) {
 }
 
 // Grab the response data from the database to generate the form.
-$query = "SELECT response_id, topic_id, response FROM mismatch_response WHERE user_id = '" . $_SESSION['user_id'] . "'";
+//$query = "SELECT response_id, topic_id, response FROM mismatch_response WHERE user_id = '" . $_SESSION['user_id'] . "'";
+$query = "SELECT mr.response_id, mr.topic_id, mr.response,mt.name as topic_name,mc.name as category_name " .
+    "FROM mismatch_response as mr " .
+    "INNER JOIN mismatch_topic as mt using(topic_id) " .
+    "INNER JOIN mismatch_category as mc using(category_id) " .
+    "WHERE mr.user_id = '" . $_SESSION['user_id'] . "'";
+
+//echo '$query = ' . $query . '<br />';
+
 $data = mysqli_query($dbc, $query);
 $responses = array();
 
 
 while ($row = mysqli_fetch_array($data)) {
-    $query2 = "SELECT name, category FROM mismatch_topic WHERE topic_id = '" . $row['topic_id'] . "'";
-//    echo '$query2 = ' . $query2 . '<br />';
 
-    $data2 = mysqli_query($dbc, $query2);
-    if (mysqli_num_rows($data2) == 1) {
-        // 通过topic_id查询 只有一个记录.
-        $row2 = mysqli_fetch_array($data2);
-        $row['topic_name'] = $row2['name'];
-        $row['category_name'] = $row2['category'];
-        array_push($responses, $row);
-    }
+    array_push($responses, $row);
+
+//    $query2 = "SELECT name, category_id FROM mismatch_topic WHERE topic_id = '" . $row['topic_id'] . "'";
+////    echo '$query2 = ' . $query2 . '<br />';
+//
+//    $data2 = mysqli_query($dbc, $query2);
+//    if (mysqli_num_rows($data2) == 1) {
+//        // 通过topic_id查询 只有一个记录.
+//        $row2 = mysqli_fetch_array($data2);
+//        $row['topic_name'] = $row2['name'];
+////        $row['category_name'] = $row2['category'];
+////        array_push($responses, $row);
+//
+//        $query3 = "SELECT name FROM mismatch_category WHERE category_id = '" . $row2['category_id'] . "'";
+//        $data3 = mysqli_query($dbc, $query3);
+//        if(mysqli_num_rows($data3)){
+//            $row3 = mysqli_fetch_array($data3);
+//            $row['category_name'] = $row3['name'];
+//            array_push($responses, $row);
+//        }
+
+//    }
 //    echo '$row[\'topic_name\'] = ' . $row['topic_name'] . '<br />';
 //    echo '$row[\'category_name\'] = ' . $row['category_name'] . '<br />';
 //    echo '$row[\'response_id\'] = ' . $row['response_id'] . '<br />';
@@ -97,13 +117,15 @@ foreach ($responses as $response) {
     }
 
     echo '<label ' . ($response['response'] == NULL ? 'class="error"' : '') . ' for="' . $response['response_id'] . '">' . $response['topic_name'] . ':</label>';
-
+    echo '<input type="radio" id="' . $response['response_id'] . '" name="' . $response['response_id'] . '" value="1" ' . ($response['response'] == 1?'checked="checked"' : '') . ' />Love ';
+    echo '<input type="radio" id="' . $response['response_id'] . '" name="' . $response['response_id'] . '" value="2" ' . ($response['response'] == 2?'checked="checked"' : '') . ' />Hate ';
     echo '<br />';
 }
 
 
 echo '</fieldset>';
 
+echo '<input type="submit" value="Save Questionnaire" name="submit" />';
 echo '</form>';
 
 
