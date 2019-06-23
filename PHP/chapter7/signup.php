@@ -15,7 +15,7 @@ require_once('appvars.php');
 require_once('connectvars.php');
 
 // Connect to the database
-$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or Die("Database connect Wrong...");
 
 // 如果是进行提交的.
 if(isset($_POST['submit'])){
