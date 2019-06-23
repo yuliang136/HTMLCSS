@@ -29,9 +29,30 @@ echo '</tr>';
 require_once('connectvars.php');
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-// Query to get the results
-$query = "SELECT * FROM riskyjobs WHERE title = '$user_search'";
-$result = mysqli_query($dbc, $query);
+//// Query to get the results
+//$query = "SELECT * FROM riskyjobs WHERE title = '$user_search'";
+
+$search_query = "SELECT * FROM riskyjobs";
+$where_list = array();
+
+$user_search = $_GET['usersearch'];
+$search_words = explode(' ', $user_search);
+foreach($search_words as $word){
+    $where_list[] = "description LIKE '%$word%'";
+}
+
+$where_clause = implode(' OR ', $where_list);
+
+if(!empty($where_clause)){
+    $search_query .= " WHERE $where_clause";
+}
+
+
+//echo '$search_query = ' . $search_query . '<br />';
+
+
+
+$result = mysqli_query($dbc, $search_query);
 while ($row = mysqli_fetch_array($result)) {
     echo '<tr class="results">';
     echo '<td valign="top" width="20%">' . $row['title'] . '</td>';
